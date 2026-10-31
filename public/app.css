@@ -1,0 +1,65 @@
+/* The cabinet is a working tool used mostly from a phone: one calm accent, large targets, plain lists. */
+:root {
+  color-scheme: light;
+  --bg: #f4f4f2;
+  --surface: #ffffff;
+  --ink: #1d1f24;
+  --muted: #5c616b;      /* 5.9:1 on surface */
+  --line: #dcdcd8;
+  --accent: #6b3f8f;     /* 7.6:1 with white */
+  --accent-soft: #f1ebf6;
+  --danger: #a81c12;
+  --ok: #17613c;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+h1, h2, h3 { margin: 0; line-height: 1.25; font-weight: 600; }
+h1 { font-size: 22px; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; }
+p { margin: 0; }
+.muted { color: var(--muted); font-size: 14px; }
+.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.top-name { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: 600; }
+.tabs { display: flex; gap: 4px; padding: 8px 16px; overflow-x: auto; background: var(--surface); border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.tabs button { flex: none; min-height: 44px; padding: 0 14px; border: 0; border-radius: 8px; background: none; color: var(--muted); font: inherit; font-weight: 500; cursor: pointer; }
+.tabs button[aria-current='page'] { background: var(--accent-soft); color: var(--accent); }
+main { display: grid; gap: 16px; max-width: 760px; margin: 0 auto; padding: 16px 16px 48px; }
+.card { display: grid; gap: 12px; min-width: 0; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.between { justify-content: space-between; }
+.grow { flex: 1 1 140px; min-width: 0; }
+.field { display: grid; gap: 4px; font-size: 14px; color: var(--muted); }
+input, select { width: 100%; min-height: 46px; padding: 0 12px; border: 1px solid #a9aaa6; border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; font-size: 16px; }
+input[type='checkbox'] { width: 22px; height: 22px; min-height: 0; flex: none; accent-color: var(--accent); }
+.check { display: flex; align-items: center; gap: 10px; min-height: 44px; color: var(--ink); font-size: 16px; }
+input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button { font: inherit; cursor: pointer; touch-action: manipulation; }
+.btn { min-height: 46px; padding: 0 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font-weight: 500; }
+a.btn { display: inline-flex; align-items: center; text-decoration: none; }
+.btn:hover { border-color: var(--muted); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn-main { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-main:hover { background: #5a3479; border-color: #5a3479; }
+.btn-danger { color: var(--danger); }
+.btn-small { min-height: 44px; padding: 0 12px; font-size: 14px; }
+.login { display: grid; gap: 14px; max-width: 380px; margin: 12vh auto 0; padding: 0 16px; }
+.msg { padding: 10px 12px; border-radius: 8px; font-size: 14px; }
+.msg-error { background: #fbeceb; color: var(--danger); }
+.msg-ok { background: #e8f4ed; color: var(--ok); }
+.msg-warn { background: #fdf4e0; color: #6b4a00; }
+.day-title { padding: 4px 0 0; font-weight: 600; }
+.booking { display: grid; gap: 4px; padding: 12px 0; border-top: 1px solid var(--line); }
+.booking:first-of-type { border-top: 0; padding-top: 0; }
+.booking-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+.booking a { color: var(--accent); }
+.week { display: grid; gap: 10px; }
+.week-row { display: grid; grid-template-columns: 96px 1fr 1fr; gap: 8px; align-items: center; }
+.week-row .check { min-height: 46px; font-size: 15px; }
+.list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.list li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 0; border-top: 1px solid var(--line); }
+.list li:first-child { border-top: 0; }
+.secret { padding: 12px; border-radius: 8px; background: var(--accent-soft); font-family: ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
+.chips { display: grid; gap: 2px; }
+@media (max-width: 380px) { .week-row { grid-template-columns: 84px 1fr 1fr; gap: 6px; } }

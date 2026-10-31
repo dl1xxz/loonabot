@@ -1,0 +1,9 @@
+{
+  "name": "booking-loona",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "server.mjs",
+  "engines": { "node": ">=24" },
+  "scripts": { "start": "node server.mjs" }
+}
